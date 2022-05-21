@@ -8,14 +8,14 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
-
+private let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
 
 class CollectionViewController: UICollectionViewController {
-    private let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
+    
     var pokemonList: [PokemonEntry] = []
+    var pokemonName: String?
     @IBOutlet weak var pokeView: UICollectionView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -29,6 +29,11 @@ class CollectionViewController: UICollectionViewController {
             }
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailViewController else { return }
+        detailVC.configureCell(name: pokemonName!)
+        
+    }
     
     private func configureCell(cell: PokemonCell, for indexPath: IndexPath) {
         NetworkManager.getSprites(name: pokemonList[indexPath.row].name) { data in
@@ -40,6 +45,12 @@ class CollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDataSource
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pokemon = pokemonList[indexPath.row].name
+        pokemonName = pokemon
+        performSegue(withIdentifier: "detailPokemon", sender: nil)
+    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

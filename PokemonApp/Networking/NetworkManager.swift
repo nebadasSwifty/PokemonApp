@@ -43,4 +43,20 @@ struct NetworkManager {
         }.resume()
     }
     
+    static func getDetailInfo(name: String, completion: @escaping (PokemonSelection) -> ()) {
+        guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(name)") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else { return }
+            do {
+                let info = try JSONDecoder().decode(PokemonSelection.self, from: data)
+                DispatchQueue.main.async {
+                    completion(info)
+                }
+            } catch let error {
+                print(error)
+            }
+        }.resume()
+    }
+    
 }
