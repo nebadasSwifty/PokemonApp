@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		ED16DB14283688A600A02B30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16DB13283688A600A02B30 /* AppDelegate.swift */; };
 		ED16DB16283688A600A02B30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16DB15283688A600A02B30 /* SceneDelegate.swift */; };
-		ED16DB18283688A600A02B30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16DB17283688A600A02B30 /* ViewController.swift */; };
 		ED16DB1B283688A600A02B30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED16DB19283688A600A02B30 /* Main.storyboard */; };
 		ED16DB1D283688A900A02B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED16DB1C283688A900A02B30 /* Assets.xcassets */; };
 		ED16DB20283688A900A02B30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED16DB1E283688A900A02B30 /* LaunchScreen.storyboard */; };
+		ED16DB2F28368AFB00A02B30 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16DB2E28368AFB00A02B30 /* CollectionViewController.swift */; };
+		ED16DB3128368B2700A02B30 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16DB3028368B2700A02B30 /* PokemonCell.swift */; };
+		ED16DB342836910D00A02B30 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16DB332836910D00A02B30 /* PokemonModel.swift */; };
+		ED16DB362836B6BA00A02B30 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16DB352836B6BA00A02B30 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED16DB10283688A600A02B30 /* PokemonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED16DB13283688A600A02B30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED16DB15283688A600A02B30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED16DB17283688A600A02B30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED16DB1A283688A600A02B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED16DB1C283688A900A02B30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED16DB1F283688A900A02B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED16DB21283688A900A02B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED16DB2E28368AFB00A02B30 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		ED16DB3028368B2700A02B30 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		ED16DB332836910D00A02B30 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		ED16DB352836B6BA00A02B30 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		ED16DB12283688A600A02B30 /* PokemonApp */ = {
 			isa = PBXGroup;
 			children = (
-				ED16DB13283688A600A02B30 /* AppDelegate.swift */,
-				ED16DB15283688A600A02B30 /* SceneDelegate.swift */,
-				ED16DB17283688A600A02B30 /* ViewController.swift */,
-				ED16DB19283688A600A02B30 /* Main.storyboard */,
-				ED16DB1C283688A900A02B30 /* Assets.xcassets */,
-				ED16DB1E283688A900A02B30 /* LaunchScreen.storyboard */,
+				ED16DB32283690F600A02B30 /* Networking */,
+				ED16DB2A283688E700A02B30 /* Model */,
+				ED16DB29283688D800A02B30 /* View */,
+				ED16DB28283688BE00A02B30 /* Controller */,
+				ED16DB27283688B400A02B30 /* Supporting Files */,
 				ED16DB21283688A900A02B30 /* Info.plist */,
 			);
 			path = PokemonApp;
+			sourceTree = "<group>";
+		};
+		ED16DB27283688B400A02B30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED16DB1C283688A900A02B30 /* Assets.xcassets */,
+				ED16DB13283688A600A02B30 /* AppDelegate.swift */,
+				ED16DB15283688A600A02B30 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED16DB28283688BE00A02B30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ED16DB2E28368AFB00A02B30 /* CollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ED16DB29283688D800A02B30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED16DB19283688A600A02B30 /* Main.storyboard */,
+				ED16DB1E283688A900A02B30 /* LaunchScreen.storyboard */,
+				ED16DB3028368B2700A02B30 /* PokemonCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED16DB2A283688E700A02B30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED16DB332836910D00A02B30 /* PokemonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED16DB32283690F600A02B30 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ED16DB352836B6BA00A02B30 /* NetworkManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +132,8 @@
 			dependencies = (
 			);
 			name = PokemonApp;
+			packageProductDependencies = (
+			);
 			productName = PokemonApp;
 			productReference = ED16DB10283688A600A02B30 /* PokemonApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +162,8 @@
 				Base,
 			);
 			mainGroup = ED16DB07283688A600A02B30;
+			packageReferences = (
+			);
 			productRefGroup = ED16DB11283688A600A02B30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED16DB18283688A600A02B30 /* ViewController.swift in Sources */,
+				ED16DB362836B6BA00A02B30 /* NetworkManager.swift in Sources */,
+				ED16DB2F28368AFB00A02B30 /* CollectionViewController.swift in Sources */,
+				ED16DB3128368B2700A02B30 /* PokemonCell.swift in Sources */,
 				ED16DB14283688A600A02B30 /* AppDelegate.swift in Sources */,
+				ED16DB342836910D00A02B30 /* PokemonModel.swift in Sources */,
 				ED16DB16283688A600A02B30 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -290,6 +346,7 @@
 				DEVELOPMENT_TEAM = UBS68N6TVH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokemonApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pokemon;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,6 +375,7 @@
 				DEVELOPMENT_TEAM = UBS68N6TVH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokemonApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pokemon;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

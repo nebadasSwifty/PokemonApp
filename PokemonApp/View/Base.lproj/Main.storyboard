@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4l4-vf-Cp3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pokedex-->
+        <scene sceneID="y7v-J7-U5t">
+            <objects>
+                <collectionViewController id="FEA-Gm-MWR" customClass="CollectionViewController" customModule="PokemonApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gfj-hL-HX5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j6O-RH-eNJ">
+                            <size key="itemSize" width="190" height="200"/>
+                            <size key="estimatedItemSize" width="190" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="yOy-XX-GGa" customClass="PokemonCell" customModule="PokemonApp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="190" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z8Q-fG-0Mp">
+                                    <rect key="frame" x="0.0" y="0.0" width="190" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rjz-km-Oea">
+                                            <rect key="frame" x="8" y="8" width="174" height="184"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ups-Rg-EGg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="114"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="114" id="Eq9-qA-4Ud"/>
+                                                        <constraint firstAttribute="width" constant="174" id="Mvp-Jb-gdW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Ns-RM3">
+                                                    <rect key="frame" x="0.0" y="122" width="174" height="62"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpQ-Ub-etj">
+                                                            <rect key="frame" x="66" y="0.0" width="42.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1r-Ja-aP9">
+                                                            <rect key="frame" x="48.5" y="28.5" width="77" height="33.5"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="LIKE ♥">
+                                                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            </buttonConfiguration>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rjz-km-Oea" secondAttribute="bottom" id="SfO-sQ-s4t"/>
+                                        <constraint firstItem="rjz-km-Oea" firstAttribute="leading" secondItem="Z8Q-fG-0Mp" secondAttribute="leadingMargin" id="UGW-lW-Nst"/>
+                                        <constraint firstItem="rjz-km-Oea" firstAttribute="top" secondItem="Z8Q-fG-0Mp" secondAttribute="topMargin" id="kBa-el-K6H"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rjz-km-Oea" secondAttribute="trailing" id="lX3-ee-FXO"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="190" height="200"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="imageView" destination="Ups-Rg-EGg" id="eTe-EE-mzO"/>
+                                    <outlet property="likeButton" destination="X1r-Ja-aP9" id="ffu-kb-bZB"/>
+                                    <outlet property="pokemonName" destination="lpQ-Ub-etj" id="KvK-CV-Adl"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="FEA-Gm-MWR" id="5Zc-f5-yYj"/>
+                            <outlet property="delegate" destination="FEA-Gm-MWR" id="05Y-O5-bIq"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Pokedex" id="jwy-ar-s7I"/>
+                    <connections>
+                        <outlet property="pokeView" destination="Gfj-hL-HX5" id="p4R-DY-9m2"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wEW-EA-wUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073.913043478261" y="64.955357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tYj-Hn-mar">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4l4-vf-Cp3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TJx-xu-oW7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FEA-Gm-MWR" kind="relationship" relationship="rootViewController" id="M8J-Ec-fpH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8RO-T4-PFD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163.768115942029" y="64.955357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Placeholder" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
