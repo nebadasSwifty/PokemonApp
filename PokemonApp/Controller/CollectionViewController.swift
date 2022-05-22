@@ -36,9 +36,9 @@ class CollectionViewController: UICollectionViewController {
     }
     
     private func configureCell(cell: PokemonCell, for indexPath: IndexPath) {
-        NetworkManager.getSprites(name: pokemonList[indexPath.row].name) { data in
+        NetworkManager.getDetailInfo(name: pokemonList[indexPath.row].name) { _, data in
+            cell.pokemonName.text = self.pokemonList[indexPath.row].name
             DispatchQueue.main.async {
-                cell.pokemonName.text = self.pokemonList[indexPath.row].name
                 cell.imageView.image = UIImage(data: data)
             }
         }

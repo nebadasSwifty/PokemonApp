@@ -24,7 +24,7 @@ struct PokemonSelection: Codable {
     let sprites: PokemonSprites
     let baseExperience: Int
     let types: [TypeElement]
-    let abilities: [Ability]
+    let abilities: [Ability]?
     let order: Int
     
     enum CodingKeys: String, CodingKey {

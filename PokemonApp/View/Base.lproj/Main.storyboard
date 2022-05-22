@@ -105,22 +105,22 @@
         <scene sceneID="CVF-rU-gvB">
             <objects>
                 <tableViewController id="jeh-M3-S5s" customClass="DetailViewController" customModule="PokemonApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6jt-hk-Rwd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="6jt-hk-Rwd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="AKS-Dh-Pa5">
+                            <tableViewSection id="40h-V4-zHp">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="227" id="ZBK-i9-Luh" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="227"/>
+                                        <rect key="frame" x="20" y="18" width="374" height="227"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZBK-i9-Luh" id="WBw-Ke-srN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="227"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="227"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="rRK-xL-F2J">
-                                                    <rect key="frame" x="80" y="11" width="254" height="205"/>
+                                                    <rect key="frame" x="80" y="11" width="214" height="205"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -132,14 +132,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="234" id="LVr-f0-c3b" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="271.5" width="414" height="234"/>
+                                        <rect key="frame" x="20" y="245" width="374" height="234"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LVr-f0-c3b" id="JuN-KD-pba">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="234"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="i7G-Mq-o8a">
-                                                    <rect key="frame" x="20" y="11" width="374" height="200"/>
+                                                    <rect key="frame" x="20" y="11" width="334" height="200"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="doF-1n-lEp">
                                                             <rect key="frame" x="0.0" y="0.0" width="144.5" height="200"/>
@@ -177,34 +177,34 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hmi-Xi-XqU">
-                                                            <rect key="frame" x="229.5" y="0.0" width="144.5" height="200"/>
+                                                            <rect key="frame" x="229.5" y="0.0" width="104.5" height="200"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="charmeleon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-wA-KGn">
-                                                                    <rect key="frame" x="41" y="0.0" width="103.5" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-wA-KGn">
+                                                                    <rect key="frame" x="95.5" y="0.0" width="9" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="190" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-YF-BG1">
-                                                                    <rect key="frame" x="111.5" y="44" width="33" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-YF-BG1">
+                                                                    <rect key="frame" x="95.5" y="44" width="9" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-Wb-vij">
-                                                                    <rect key="frame" x="127" y="88" width="17.5" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-Wb-vij">
+                                                                    <rect key="frame" x="95.5" y="88" width="9" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysP-iY-ltt">
-                                                                    <rect key="frame" x="132" y="132" width="12.5" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysP-iY-ltt">
+                                                                    <rect key="frame" x="95.5" y="132" width="9" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5J-lh-tpS">
-                                                                    <rect key="frame" x="121" y="176" width="23.5" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5J-lh-tpS">
+                                                                    <rect key="frame" x="95.5" y="176" width="9" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -222,14 +222,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="35" id="kQi-wz-MPY">
-                                        <rect key="frame" x="0.0" y="505.5" width="414" height="35"/>
+                                        <rect key="frame" x="20" y="479" width="374" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kQi-wz-MPY" id="s8H-gl-VWQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUy-wo-KyX">
-                                                    <rect key="frame" x="20" y="2" width="374" height="31"/>
+                                                    <rect key="frame" x="20" y="2" width="334" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -245,14 +245,14 @@
                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Pzd-VX-RKC" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="540.5" width="414" height="57"/>
+                                        <rect key="frame" x="20" y="514" width="374" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pzd-VX-RKC" id="fQb-FP-bJD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-DN-nzZ">
-                                                    <rect key="frame" x="30" y="16" width="354" height="24.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-DN-nzZ">
+                                                    <rect key="frame" x="30" y="16" width="314" height="24.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -267,14 +267,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="35" id="X6k-nH-hej">
-                                        <rect key="frame" x="0.0" y="597.5" width="414" height="35"/>
+                                        <rect key="frame" x="20" y="571" width="374" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X6k-nH-hej" id="zqc-IQ-trN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-j8-udy">
-                                                    <rect key="frame" x="20" y="2" width="374" height="31"/>
+                                                    <rect key="frame" x="20" y="2" width="334" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -289,15 +289,15 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gXU-pu-e6O" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="632.5" width="414" height="46.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ability" id="gXU-pu-e6O" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="606" width="374" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gXU-pu-e6O" id="suS-KN-pfG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMT-Cr-Lln">
-                                                    <rect key="frame" x="30" y="11" width="354" height="24.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMT-Cr-Lln">
+                                                    <rect key="frame" x="30" y="11" width="314" height="24.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -308,28 +308,6 @@
                                                 <constraint firstItem="ZMT-Cr-Lln" firstAttribute="leading" secondItem="suS-KN-pfG" secondAttribute="leadingMargin" constant="10" id="S07-Rx-9Sb"/>
                                                 <constraint firstItem="ZMT-Cr-Lln" firstAttribute="top" secondItem="suS-KN-pfG" secondAttribute="topMargin" id="bEp-Uv-AhW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ZMT-Cr-Lln" secondAttribute="trailing" constant="10" id="h32-ca-vBv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Gjf-Js-Alx" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="679" width="414" height="46.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gjf-Js-Alx" id="l67-uN-qdu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixl-lL-gB8">
-                                                    <rect key="frame" x="30" y="11" width="354" height="24.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Ixl-lL-gB8" firstAttribute="leading" secondItem="l67-uN-qdu" secondAttribute="leadingMargin" constant="10" id="Qlp-sL-hkZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ixl-lL-gB8" secondAttribute="trailing" constant="10" id="Wki-gu-dX6"/>
-                                                <constraint firstItem="Ixl-lL-gB8" firstAttribute="top" secondItem="l67-uN-qdu" secondAttribute="topMargin" id="d0t-7y-Asj"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Ixl-lL-gB8" secondAttribute="bottom" id="iO1-eH-mem"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -349,7 +327,6 @@
                         <outlet property="pokeImage" destination="rRK-xL-F2J" id="hx6-B3-7Po"/>
                         <outlet property="pokeNameLabel" destination="7Oa-wA-KGn" id="sGb-7i-caq"/>
                         <outlet property="pokeOrderLabel" destination="ysP-iY-ltt" id="BG5-Ku-Tcq"/>
-                        <outlet property="pokeSecondAbilityLabel" destination="Ixl-lL-gB8" id="2JJ-GW-v7F"/>
                         <outlet property="pokeTypeLabel" destination="BSW-DN-nzZ" id="vEn-gN-uH3"/>
                         <outlet property="pokeWeightLabel" destination="eIf-YF-BG1" id="QqS-AU-zHB"/>
                     </connections>
@@ -384,6 +361,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
