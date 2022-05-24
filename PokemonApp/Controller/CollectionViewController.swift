@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 private let reuseIdentifier = "Cell"
-private let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
+private let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20"
 
 class CollectionViewController: UICollectionViewController {
-    
     var pokemonList: [PokemonEntry] = []
     var pokemonName: String?
     @IBOutlet weak var pokeView: UICollectionView!
@@ -36,10 +37,11 @@ class CollectionViewController: UICollectionViewController {
     }
     
     private func configureCell(cell: PokemonCell, for indexPath: IndexPath) {
-        NetworkManager.getDetailInfo(name: pokemonList[indexPath.row].name) { _, data in
+        NetworkManager.getDetailInfo(name: pokemonList[indexPath.row].name) { pokemons in
             cell.pokemonName.text = self.pokemonList[indexPath.row].name
+            guard let url = URL(string: pokemons.sprites.frontDefault) else { return }
             DispatchQueue.main.async {
-                cell.imageView.image = UIImage(data: data)
+                cell.imageView.sd_setImage(with: url)
             }
         }
     }
@@ -47,8 +49,8 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let pokemon = pokemonList[indexPath.row].name
-        pokemonName = pokemon
+        let pokemon = pokemonList[indexPath.row]
+        pokemonName = pokemon.name
         performSegue(withIdentifier: "detailPokemon", sender: nil)
     }
 

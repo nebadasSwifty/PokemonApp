@@ -6,36 +6,34 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 
 struct NetworkManager {
     
-    static func getData(url: String, completion: @escaping ([PokemonEntry]) -> ()) {
+    static func getData(url: String, completion: @escaping ([PokemonEntry]) -> Void) {
         guard let url = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else { return }
+        AF.request(url, method: .get).validate().responseDecodable(of: Pokemon.self) { response in
+            guard let data = response.data else { return }
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(data, forKey: "pokemonList")
             do {
-                let pokemons = try JSONDecoder().decode(Pokemon.self, from: data)
-                DispatchQueue.global().async {
+                let pokemons = try JSONDecoder().decode(Pokemon.self, from: userDefaults.object(forKey: "pokemonList") as! Data)
+                DispatchQueue.main.async {
                     completion(pokemons.results)
                 }
-            } catch let error {
-                print(error)
-            }
-        }.resume()
+            } catch { print(error) }
+       }
     }
     
-    static func getDetailInfo(name: String, completion: @escaping (PokemonSelection, Data) -> ()) {
+    static func getDetailInfo(name: String, completion: @escaping (PokemonSelection) -> ()) {
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(name)") else { return }
-        
         URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { return }
             do {
                 let info = try JSONDecoder().decode(PokemonSelection.self, from: data)
-                guard let url = URL(string: info.sprites.frontDefault) else { return }
-                guard let image = try? Data(contentsOf: url) else { return }
                 DispatchQueue.main.async {
-                    completion(info, image)
+                    completion(info)
                 }
             } catch let error {
                 print(error)

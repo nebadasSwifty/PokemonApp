@@ -57,6 +57,12 @@
                                                             <buttonConfiguration key="configuration" style="plain" title="LIKE ♥">
                                                                 <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             </buttonConfiguration>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -112,7 +118,7 @@
                         <sections>
                             <tableViewSection id="40h-V4-zHp">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="227" id="ZBK-i9-Luh" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="227" id="ZBK-i9-Luh">
                                         <rect key="frame" x="20" y="18" width="374" height="227"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZBK-i9-Luh" id="WBw-Ke-srN">
@@ -131,7 +137,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="234" id="LVr-f0-c3b" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="234" id="LVr-f0-c3b">
                                         <rect key="frame" x="20" y="245" width="374" height="234"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LVr-f0-c3b" id="JuN-KD-pba">
@@ -244,7 +250,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Pzd-VX-RKC" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Pzd-VX-RKC">
                                         <rect key="frame" x="20" y="514" width="374" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pzd-VX-RKC" id="fQb-FP-bJD">
@@ -289,7 +295,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ability" id="gXU-pu-e6O" customClass="PokemonDetailCell" customModule="PokemonApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ability" id="gXU-pu-e6O">
                                         <rect key="frame" x="20" y="606" width="374" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gXU-pu-e6O" id="suS-KN-pfG">
@@ -333,7 +339,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRO-1i-5d8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1969.5652173913045" y="78.348214285714278"/>
+            <point key="canvasLocation" x="1862" y="65"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tYj-Hn-mar">

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DetailViewController: UITableViewController {
     @IBOutlet weak var pokeImage: UIImageView!
@@ -19,7 +20,7 @@ class DetailViewController: UITableViewController {
     
 
     func configureCell(name: String) {
-        NetworkManager.getDetailInfo(name: name) { [weak self] pokemon, data in
+        NetworkManager.getDetailInfo(name: name) { [weak self] pokemon in
             self?.title = pokemon.name.localizedCapitalized
             self?.pokeNameLabel.text = pokemon.name
             self?.pokeWeightLabel.text = String(pokemon.weight)
@@ -28,8 +29,9 @@ class DetailViewController: UITableViewController {
             self?.pokeOrderLabel.text = String(pokemon.order)
             self?.pokeBaseExpLabel.text = String(pokemon.baseExperience)
             self?.pokeFirstAbilityLabel.text = pokemon.abilities?[0].ability.name
+            guard let url = URL(string: pokemon.sprites.frontDefault) else { return }
             DispatchQueue.main.async {
-                self?.pokeImage.image = UIImage(data: data)
+                self?.pokeImage.sd_setImage(with: url)
             }
         }
     }
