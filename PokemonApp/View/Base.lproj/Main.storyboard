@@ -46,24 +46,11 @@
                                                     <rect key="frame" x="0.0" y="122" width="174" height="62"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpQ-Ub-etj">
-                                                            <rect key="frame" x="66" y="0.0" width="42.5" height="20.5"/>
+                                                            <rect key="frame" x="66" y="0.0" width="42.5" height="62"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1r-Ja-aP9">
-                                                            <rect key="frame" x="48.5" y="28.5" width="77" height="33.5"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="LIKE ♥">
-                                                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                            </buttonConfiguration>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                                    <integer key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -87,7 +74,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="imageView" destination="Ups-Rg-EGg" id="eTe-EE-mzO"/>
-                                    <outlet property="likeButton" destination="X1r-Ja-aP9" id="ffu-kb-bZB"/>
                                     <outlet property="pokemonName" destination="lpQ-Ub-etj" id="KvK-CV-Adl"/>
                                 </connections>
                             </collectionViewCell>
@@ -97,7 +83,7 @@
                             <outlet property="delegate" destination="FEA-Gm-MWR" id="05Y-O5-bIq"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Pokedex" id="jwy-ar-s7I"/>
+                    <navigationItem key="navigationItem" title="Pokedex" largeTitleDisplayMode="always" id="jwy-ar-s7I"/>
                     <connections>
                         <outlet property="pokeView" destination="Gfj-hL-HX5" id="p4R-DY-9m2"/>
                         <segue destination="jeh-M3-S5s" kind="show" identifier="detailPokemon" id="Ge8-yn-eea"/>
@@ -346,8 +332,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4l4-vf-Cp3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TJx-xu-oW7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="TJx-xu-oW7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

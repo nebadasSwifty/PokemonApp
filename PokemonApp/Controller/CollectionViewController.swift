@@ -8,23 +8,22 @@
 import UIKit
 import SDWebImage
 
-
-private let reuseIdentifier = "Cell"
-private let url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20"
-
 class CollectionViewController: UICollectionViewController {
-    var pokemonList: [PokemonEntry] = []
-    var pokemonName: String?
+    private var pokemonList: [PokemonEntry] = []
+    private var pokemonName: String?
+    private var maximumPokemonCount = 0
+    private var offsetList = 0
     @IBOutlet weak var pokeView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        fetchData(offset: offsetList)
     }
     
-    private func fetchData() {
-        NetworkManager.getData(url: url) { pokemons in
-            self.pokemonList = pokemons
+    private func fetchData(offset: Int) {
+        NetworkManager.getData(offset: offset) {
+            self.pokemonList.append(contentsOf: $0)
+            self.maximumPokemonCount = $1
             DispatchQueue.main.async {
                 self.pokeView.reloadData()
             }
@@ -45,6 +44,7 @@ class CollectionViewController: UICollectionViewController {
             }
         }
     }
+    
 
     // MARK: UICollectionViewDataSource
     
@@ -60,8 +60,15 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PokemonCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PokemonCell
         configureCell(cell: cell, for: indexPath)
         return cell
     }
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if offsetList < maximumPokemonCount && indexPath.row == pokemonList.count - 2 {
+            offsetList += 20
+            fetchData(offset: offsetList)
+        }
+    }
 }
+
