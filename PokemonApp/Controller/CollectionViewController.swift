@@ -21,11 +21,11 @@ class CollectionViewController: UICollectionViewController {
     }
     
     private func fetchData(offset: Int) {
-        NetworkManager.getData(offset: offset) {
-            self.pokemonList.append(contentsOf: $0)
-            self.maximumPokemonCount = $1
+        NetworkManager.getData(offset: offset) { [weak self] in
+            self?.pokemonList.append(contentsOf: $0)
+            self?.maximumPokemonCount = $1
             DispatchQueue.main.async {
-                self.pokeView.reloadData()
+                self?.pokeView.reloadData()
             }
         }
     }
@@ -65,7 +65,7 @@ class CollectionViewController: UICollectionViewController {
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if offsetList < maximumPokemonCount && indexPath.row == pokemonList.count - 2 {
+        if offsetList < maximumPokemonCount && indexPath.row == pokemonList.count - 6 {
             offsetList += 20
             fetchData(offset: offsetList)
         }
