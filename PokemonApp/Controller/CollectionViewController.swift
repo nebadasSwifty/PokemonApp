@@ -13,7 +13,6 @@ class CollectionViewController: UICollectionViewController {
     private var favoritePokemons: [PokemonSelection] = []
     private var maximumPokemonCount = 0
     private var offsetList = 0
-    @IBOutlet private weak var pokeView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +20,24 @@ class CollectionViewController: UICollectionViewController {
     }
     
     private func fetchData(offset: Int) {
-        NetworkManager.getData(offset: offset, completion: { [weak self] in
-            self?.maximumPokemonCount = $1
-            $0.forEach({ pokemon in
-                NetworkManager.getDetailInfo(name: pokemon.name, completion: {
+        var loadedPokemonsCount = 0
+        NetworkManager.getData(offset: offset, completion: { [weak self] pokemons, pokemonsCount in
+            self?.maximumPokemonCount = pokemonsCount
+            pokemons.forEach({
+                NetworkManager.getDetailInfo(name: $0.name, completion: {
+                    loadedPokemonsCount += 1
                     self?.pokemonList.append($0)
-                    self?.pokeView.reloadData()
+                    
+                    if loadedPokemonsCount == pokemons.count {
+                        self?.collectionView.reloadData()
+                    }
                 })
             })
         })
     }
     
     @objc private func likePokemon(sender: UIButton) {
-        guard let cell = sender.superview?.superview?.superview?.superview as? PokemonCell else {
+        guard let cell = sender.superview?.superview as? PokemonCell else {
             return
         }
         
@@ -49,7 +53,7 @@ class CollectionViewController: UICollectionViewController {
             favoritePokemons.removeAll(where: { $0.name == pokemon?.name })
         }
         
-        pokeView.reloadData()
+        collectionView.reloadData()
     }
     
     private func configureCell(cell: PokemonCell, for indexPath: IndexPath) {
@@ -57,10 +61,10 @@ class CollectionViewController: UICollectionViewController {
         
         if indexPath.section == 0 && !favoritePokemons.isEmpty {
             pokemon = favoritePokemons[indexPath.item]
-            cell.likeButton.setTitle("Unlike", for: .normal)
+            cell.likeButton.setTitle("👎 Dislike", for: .normal)
         } else {
             pokemon = pokemonList[indexPath.item]
-            cell.likeButton.setTitle("Like", for: .normal)
+            cell.likeButton.setTitle("👍 Like", for: .normal)
         }
         
         cell.likeButton.addTarget(self, action: #selector(likePokemon(sender:)), for: .touchUpInside)
