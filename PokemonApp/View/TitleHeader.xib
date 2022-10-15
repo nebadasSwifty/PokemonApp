@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Qkk-oc-PNY" customClass="TitleHeader" customModule="PokemonApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqO-oe-jQ4">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="59"/>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIs-Di-gYV">
+                    <rect key="frame" x="20" y="10" width="350" height="39"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Ked-PU-Ums"/>
+            <constraints>
+                <constraint firstItem="Ked-PU-Ums" firstAttribute="trailing" secondItem="sqO-oe-jQ4" secondAttribute="trailing" id="BTz-25-QVB"/>
+                <constraint firstAttribute="bottom" secondItem="sqO-oe-jQ4" secondAttribute="bottom" id="Gq5-y8-S2a"/>
+                <constraint firstItem="OIs-Di-gYV" firstAttribute="top" secondItem="Qkk-oc-PNY" secondAttribute="top" constant="10" id="YQ1-mc-E9f"/>
+                <constraint firstItem="sqO-oe-jQ4" firstAttribute="leading" secondItem="Ked-PU-Ums" secondAttribute="leading" id="cF7-Bh-9nq"/>
+                <constraint firstItem="Ked-PU-Ums" firstAttribute="bottom" secondItem="OIs-Di-gYV" secondAttribute="bottom" constant="10" id="h5D-fO-ar9"/>
+                <constraint firstItem="OIs-Di-gYV" firstAttribute="leading" secondItem="Qkk-oc-PNY" secondAttribute="leading" constant="20" id="iN4-gT-o1N"/>
+                <constraint firstAttribute="trailing" secondItem="OIs-Di-gYV" secondAttribute="trailing" constant="20" id="oZH-IU-HeQ"/>
+                <constraint firstItem="sqO-oe-jQ4" firstAttribute="top" secondItem="Qkk-oc-PNY" secondAttribute="top" id="vVJ-n6-gQH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="title" destination="OIs-Di-gYV" id="9CD-7r-hnb"/>
+            </connections>
+            <point key="canvasLocation" x="153.84615384615384" y="-270.49763033175356"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
