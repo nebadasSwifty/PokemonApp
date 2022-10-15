@@ -13,7 +13,12 @@ final class DetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        let backgroundView = UIImageView(image: #imageLiteral(resourceName: "background"))
+        tableView.backgroundView = backgroundView
         tableView.estimatedSectionHeaderHeight = 64
         tableView.register(UINib(nibName: "TitleHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "Header")
         title = selectedPokemon.name.localizedCapitalized
