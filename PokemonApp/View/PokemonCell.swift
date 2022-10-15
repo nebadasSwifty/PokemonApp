@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PokemonCell: UICollectionViewCell {
+final class PokemonCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pokemonName: UILabel!
     @IBOutlet weak var likeButton: UIButton!

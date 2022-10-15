@@ -9,11 +9,11 @@ import UIKit
 import SDWebImage
 
 class CollectionViewController: UICollectionViewController {
-    private var pokemonList: [PokemonEntry] = []
-    private var pokemonName: String?
+    private var pokemonList: [PokemonSelection] = []
+    private var favoritePokemons: [PokemonSelection] = []
     private var maximumPokemonCount = 0
     private var offsetList = 0
-    @IBOutlet weak var pokeView: UICollectionView!
+    @IBOutlet private weak var pokeView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,42 +21,76 @@ class CollectionViewController: UICollectionViewController {
     }
     
     private func fetchData(offset: Int) {
-        NetworkManager.getData(offset: offset) { [weak self] in
-            self?.pokemonList.append(contentsOf: $0)
+        NetworkManager.getData(offset: offset, completion: { [weak self] in
             self?.maximumPokemonCount = $1
-            DispatchQueue.main.async {
-                self?.pokeView.reloadData()
-            }
-        }
+            $0.forEach({ pokemon in
+                NetworkManager.getDetailInfo(name: pokemon.name, completion: {
+                    self?.pokemonList.append($0)
+                    self?.pokeView.reloadData()
+                })
+            })
+        })
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailVC = segue.destination as? DetailViewController else { return }
-        detailVC.configureCell(name: pokemonName!)
+    
+    @objc private func likePokemon(sender: UIButton) {
+        guard let cell = sender.superview?.superview?.superview?.superview as? PokemonCell else {
+            return
+        }
         
+        let pokemon: PokemonSelection?
+        
+        if pokemonList.contains(where: { $0.name == cell.pokemonName.text }) {
+            pokemon = pokemonList.first(where: { $0.name == cell.pokemonName.text })
+            favoritePokemons.append(pokemon!)
+            pokemonList.removeAll(where: { $0.name == pokemon?.name })
+        } else {
+            pokemon = favoritePokemons.first(where: { $0.name == cell.pokemonName.text })
+            pokemonList.append(pokemon!)
+            favoritePokemons.removeAll(where: { $0.name == pokemon?.name })
+        }
+        
+        pokeView.reloadData()
     }
     
     private func configureCell(cell: PokemonCell, for indexPath: IndexPath) {
-        NetworkManager.getDetailInfo(name: pokemonList[indexPath.row].name) { pokemons in
-            cell.pokemonName.text = self.pokemonList[indexPath.row].name
-            guard let url = URL(string: pokemons.sprites.frontDefault) else { return }
-            DispatchQueue.main.async {
-                cell.imageView.sd_setImage(with: url)
-            }
+        let pokemon: PokemonSelection
+        
+        if indexPath.section == 0 && !favoritePokemons.isEmpty {
+            pokemon = favoritePokemons[indexPath.item]
+            cell.likeButton.setTitle("Unlike", for: .normal)
+        } else {
+            pokemon = pokemonList[indexPath.item]
+            cell.likeButton.setTitle("Like", for: .normal)
+        }
+        
+        cell.likeButton.addTarget(self, action: #selector(likePokemon(sender:)), for: .touchUpInside)
+        cell.pokemonName.text = pokemon.name
+        
+        if let url = URL(string: pokemon.sprites.frontDefault) {
+            cell.imageView.sd_setImage(with: url)
         }
     }
-    
 
     // MARK: UICollectionViewDataSource
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let pokemon = pokemonList[indexPath.row]
-        pokemonName = pokemon.name
-        performSegue(withIdentifier: "detailPokemon", sender: nil)
+        if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as? DetailViewController {
+            
+            if indexPath.section == 0 && !favoritePokemons.isEmpty {
+                controller.selectedPokemon = favoritePokemons[indexPath.item]
+            } else {
+                controller.selectedPokemon = pokemonList[indexPath.item]
+            }
+            
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
 
-
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return favoritePokemons.isEmpty ? 1 : 2
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemonList.count
+        return section == 0 ? favoritePokemons.isEmpty ? pokemonList.count : favoritePokemons.count : pokemonList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,11 +98,31 @@ class CollectionViewController: UICollectionViewController {
         configureCell(cell: cell, for: indexPath)
         return cell
     }
+    
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if offsetList < maximumPokemonCount && indexPath.row == pokemonList.count - 6 {
+        if offsetList < maximumPokemonCount && indexPath.row == pokemonList.count - 1 {
             offsetList += 20
             fetchData(offset: offsetList)
         }
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! PokeViewHeader
+        
+        if indexPath.section == 0 && !favoritePokemons.isEmpty {
+            view.setText(text: "Favorite Pokemons")
+        } else {
+            view.setText(text: "All Pokemons")
+        }
+        
+        return view
+    }
 }
 
+final class PokeViewHeader: UICollectionReusableView {
+    @IBOutlet weak private var titleLabel: UILabel!
+    
+    func setText(text: String) {
+        titleLabel.text = text
+    }
+}

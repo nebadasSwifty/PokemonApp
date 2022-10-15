@@ -5,9 +5,6 @@
 //  Created by Кирилл on 19.05.2022.
 //
 
-import Foundation
-
-
 struct Pokemon: Codable {
     var count: Int
     var results: [PokemonEntry]
@@ -32,7 +29,6 @@ struct PokemonSelection: Codable {
         case name, height, weight, sprites, types, abilities, order
         case baseExperience = "base_experience"
     }
-
 }
 
 struct PokemonSprites: Codable {
